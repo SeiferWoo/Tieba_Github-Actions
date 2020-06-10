@@ -1,0 +1,20 @@
+name: Run it on action
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: 00 02 * * *
+jobs:
+  run-it:
+    runs-on: ubuntu-latest
+    name: Run it on action
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@master
+      - name: PHP env
+        uses: franzliedke/gh-action-php@master
+      - name: Run
+        run: |
+          php7.2 run
