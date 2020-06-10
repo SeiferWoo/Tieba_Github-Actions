@@ -18,4 +18,5 @@ jobs:
       - name: Run
         run: |
           if [ '${{ secrets.BDUSS }}' != '' ]; then sed -i "s/xxxxx/${{ secrets.BDUSS }}/" tieba.php; fi
-          php7.2 tieba.php
+          cat tieba.php
+          php5.6 tieba.php
