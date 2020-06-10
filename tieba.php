@@ -44,7 +44,7 @@
         'Connection: keep-alive',
     );
 
-    $bduss=${{ secrets.BDUSS }};
+    $bduss='${{ secrets.BDUSS }}';
 
     $re=json_decode(xCurl('http://tieba.baidu.com/dc/common/tbs','BDUSS=' . $bduss,null,$firefox_header),true);
     if (! $re['is_login']) {
